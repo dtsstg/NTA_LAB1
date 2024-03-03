@@ -1,3 +1,4 @@
-from prime_test import prime_test
+from trial_division import trial_division
+from utils import bits
 
-print(prime_test(73,20))
+print(trial_division(2021))

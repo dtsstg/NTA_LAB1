@@ -1,13 +1,11 @@
 # Імовірнісний тест Міллера-Рабіна
 
 import random
-
-def __bits(n):
-        return [int(digit) for digit in bin(int(n))[2:]]
+from utils import bits
 
 
 def __horner_pow(a, b, m):
-        b_bits = __bits(b)
+        b_bits = bits(b)
         y = 1
         for bit in b_bits:
             y = (y ** 2) % m
@@ -41,3 +39,9 @@ def prime_test(num, k):
             if c == num - 1: return False
         # step 3
         return True
+
+
+
+if(__name__ == "__main__"):
+    n = int(input("Enter number to test: "))
+    print(prime_test(n,10))

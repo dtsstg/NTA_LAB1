@@ -1,17 +1,7 @@
 # Імовірнісний тест Міллера-Рабіна
 
 import random
-from utils import bits
-
-
-def __horner_pow(a, b, m):
-        b_bits = bits(b)
-        y = 1
-        for bit in b_bits:
-            y = (y ** 2) % m
-            y = y * (a ** bit) % m
-
-        return y
+from utils import bits, horner_pow
 
 
 def prime_test(num, k):
@@ -28,7 +18,7 @@ def prime_test(num, k):
         for _ in range(k):
             # step 1
             a = random.randint(2, num - 1)
-            b0 = __horner_pow(a, d, num)
+            b0 = horner_pow(a, d, num)
             c = d
             while c != num - 1:
                 if b0 == 1 or b0 == num - 1: break;

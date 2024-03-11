@@ -1,6 +1,6 @@
 # Метод пробних ділень 
 
-from utils import bits
+from utils import bits, primes
 import numpy as np
 
 def __test_divisor(b_vector,m):
@@ -12,7 +12,7 @@ def __test_divisor(b_vector,m):
 
 
 def trial_division(n):
-    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+    
     max_prime = int(n**0.5)
     b_vector = bits(n)
     for prime in primes:
